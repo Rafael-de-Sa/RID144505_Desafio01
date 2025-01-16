@@ -10,6 +10,10 @@ body {
   margin: 0;
 }
 
+main {
+  width: 100%;
+}
+
 h1 {
   font-size: 3rem;
   margin: 0;
@@ -80,10 +84,21 @@ label {
   padding: 0;
   margin: 0;
   font-weight: 800;
+  align-items: center;
 }
 
 .navbar-list > ul > li {
   cursor: pointer;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+  color: #fff;
+}
+
+a:hover {
+  color: #e0dbdb;
 }
 
 .navbar-list > ul > li:first-child {
@@ -105,13 +120,14 @@ label {
 }
 
 .search {
-  margin: 0 22.5rem 28rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
   /*cima lateral baixo*/
 }
 .search-box {
   background-color: #ffffff;
-  padding: 8rem 6.5rem 4.5rem;
-  width: 36rem;
+  width: 53rem;
   border-radius: 2rem;
 }
 
@@ -119,10 +135,52 @@ label {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: 1.5rem;
+  padding: 8rem 6.5rem 4.5rem;
 }
 
 .latitude-longitude {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.2rem;
+}
+
+.zipcode-table-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.table-box {
+  width: 53rem;
+  margin-top: 15rem;
+}
+
+.table-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.zipcode-table {
+  width: 100%;
+  margin-top: 1rem;
+  text-align: center;
+  font-weight: 800;
+  font-size: 1.3rem;
+  border: none;
+  border-collapse: collapse;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.zipcode-table-head {
+  height: 4.5rem;
+}
+
+.zipcode-table-row {
+  height: 4.5rem;
+  width: 100%;
+  background-color: #fff;
 }
