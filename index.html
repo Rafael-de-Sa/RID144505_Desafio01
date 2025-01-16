@@ -35,7 +35,45 @@
       </section>
       <section class="search">
         <div class="search-box">
-          <form action=""></form>
+          <form action="" class="search-grid">
+            <label for="first-name">Primeiro Nome:</label>
+            <input
+              type="text"
+              placeholder="Insira seu primeiro nome"
+              id="first-name"
+              name="first-name" />
+
+            <label for="email">E-mail:</label>
+            <input
+              type="email"
+              placeholder="Insira seu e-mail"
+              id="email"
+              name="email" />
+
+            <label for="zip-code">Digite o CEP:</label>
+            <input
+              type="text"
+              placeholder="Insira o CEP"
+              id="zip-code"
+              name="zip-code" />
+
+            <label for="latitude"
+              >Digite a latitude e longitude para saber a previsão:</label
+            >
+            <div class="latitude-longitude">
+              <input
+                type="number"
+                placeholder="Latitude"
+                id="latitude"
+                name="latitude" />
+              <input
+                type="number"
+                placeholder="Longitude"
+                id="longitude"
+                name="longitude" />
+            </div>
+            <button type="submit" class="background-blue">Acessar</button>
+          </form>
         </div>
       </section>
     </main>
