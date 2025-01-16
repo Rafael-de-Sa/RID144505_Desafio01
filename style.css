@@ -5,3 +5,62 @@ html {
   box-sizing: border-box;
   font-size: 16px;
 }
+
+h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+h2 {
+  font-weight: 800;
+  font-size: 3rem;
+  margin: 0;
+}
+
+.background-blue {
+  background-color: #0c70f2;
+  color: #fff;
+}
+
+.background-gray {
+  background-color: #f2f2f2;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 3.5rem 1rem;
+}
+
+.navbar > li {
+  display: flex;
+  flex-direction: row;
+}
+
+.navbar-list {
+  display: flex;
+}
+
+.navbar-list > ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  font-size: 1.5rem;
+  padding: 0;
+  margin: 0;
+  font-weight: 800;
+}
+
+.navbar-list > ul > li {
+  cursor: pointer;
+}
+
+.navbar-list > ul > li:first-child {
+  margin-right: 2.5rem;
+}
+
+.navbar > h1 {
+  cursor: pointer;
+}
