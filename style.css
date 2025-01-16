@@ -68,3 +68,13 @@ h2 {
 .navbar > h1 {
   cursor: pointer;
 }
+
+.page-title {
+  display: flex;
+  flex-direction: row;
+  padding: 7.5rem 15.5rem;
+}
+
+.page-title > img {
+  object-fit: contain;
+}
