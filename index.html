@@ -18,13 +18,14 @@
           <h1>DncWeather</h1>
           <div class="navbar-list">
             <ul>
-              <li>Endereços</li>
+              <li><a href="#zipcode-table">Endereços</a></li>
               <li>Previsão do Tempo</li>
             </ul>
           </div>
         </section>
       </nav>
     </header>
+
     <main class="background-gray">
       <section class="page-title">
         <h2>
@@ -74,6 +75,29 @@
             </div>
             <button type="submit" class="background-blue">Acessar</button>
           </form>
+        </div>
+      </section>
+
+      <section class="zipcode-table-container" id="zipcode-table">
+        <div class="table-box">
+          <div class="table-title">
+            <h2>Resultado da busca por CEP:</h2>
+            <img src="./assets/location.png" alt="" />
+          </div>
+          <table class="zipcode-table">
+            <thead class="background-blue zipcode-table-head">
+              <tr>
+                <th scope="col">Logradouro</th>
+                <th scope="col">Bairro/Distrito</th>
+                <th scope="col">Localidade/UF</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="zipcode-table-row">
+                <td>Teste</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </section>
     </main>
