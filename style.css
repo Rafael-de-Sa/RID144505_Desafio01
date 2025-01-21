@@ -284,20 +284,29 @@ a:hover {
 /*Mobile*/
 @media only screen and (max-width: 767px) {
   h1 {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
   }
 
   h2 {
-    font-size: 1.7rem;
+    font-size: 1.6rem;
+  }
+
+  label {
+    font-size: 1rem;
   }
 
   input {
     padding: 1rem 0 1rem 0.7rem;
     width: 23rem;
+    font-size: 0.8rem;
+  }
+
+  button {
+    font-size: 1.1rem;
   }
 
   .navbar {
-    padding: 1rem 2rem 1rem;
+    padding: 1rem 1.3rem 1rem;
   }
 
   .navbar-list > ul {
@@ -310,7 +319,7 @@ a:hover {
   }
 
   .page-title > img {
-    height: 8rem;
+    height: 6rem;
   }
 
   .search-box {
@@ -323,5 +332,45 @@ a:hover {
 
   .latitude-longitude {
     grid-template-columns: repeat(1, 1fr);
+  }
+
+  .internal-container {
+    width: 32rem;
+  }
+
+  .table-title > img {
+    object-fit: contain;
+    width: 5rem;
+  }
+
+  .zipcode-table {
+    font-size: 1rem;
+  }
+
+  .zipcode-table-head {
+    height: 3rem;
+  }
+
+  .zipcode-table-row {
+    height: 3rem;
+  }
+
+  .weather-result-text {
+    font-size: 1rem;
+    height: 3.2rem;
+  }
+
+  .footer {
+    margin-top: 6rem;
+    font-size: 0.8rem;
+    height: 4rem;
+  }
+
+  #zipcode-table {
+    margin-top: 9rem;
+  }
+
+  #weather-result {
+    margin-top: 6rem;
   }
 }
