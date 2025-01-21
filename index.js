@@ -40,3 +40,19 @@ async function getWeather() {
   }
 }
 
+function buttonClick() {
+  const zipCode = document.getElementById("zipCode").value;
+  const latitude = document.getElementById("latitude").value;
+  const longitude = document.getElementById("longitude").value;
+
+  if (zipCode) {
+    getAdressByZipCode();
+  }
+  if (latitude && longitude) {
+    getWeather();
+  }
+
+  if (!zipCode && !latitude && !longitude) {
+    alert("Preencha os campos corretamente!");
+  }
+}
