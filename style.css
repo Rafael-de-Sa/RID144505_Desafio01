@@ -184,3 +184,20 @@ a:hover {
   width: 100%;
   background-color: #fff;
 }
+
+.weather-result-text {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 1.2rem;
+  font-weight: 800;
+  width: 100%;
+  background-color: #fff;
+  border: solid 1px #0c70f2;
+  border-radius: 2rem;
+  height: 4.5rem;
+  margin: 1rem 0 0 0;
+}
+
