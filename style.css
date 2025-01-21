@@ -229,12 +229,12 @@ a:hover {
     font-size: 1.8rem;
   }
 
-  button {
-    font-size: 1.3rem;
-  }
-
   label {
     font-size: 1.2rem;
+  }
+
+  button {
+    font-size: 1.3rem;
   }
 
   .navbar-list > ul {
@@ -250,11 +250,6 @@ a:hover {
     height: 8rem;
   }
 
-  .table-title > img {
-    object-fit: contain;
-    width: 7.3rem;
-  }
-
   .search-box {
     width: 37rem;
   }
@@ -265,6 +260,11 @@ a:hover {
 
   .internal-container {
     width: 37rem;
+  }
+
+  .table-title > img {
+    object-fit: contain;
+    width: 7.3rem;
   }
 
   .footer {
