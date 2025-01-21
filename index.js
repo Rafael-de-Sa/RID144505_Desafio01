@@ -22,3 +22,21 @@ async function getAdressByZipCode() {
     alert(error.message);
   }
 }
+
+async function getWeather() {
+  const longitude = document.getElementById("longitude").value;
+  const latitude = document.getElementById("latitude").value;
+  try {
+    const response = await fetch(
+      `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m`
+    );
+    //-23.758378, -53.296727
+    const data = await response.json();
+    document.getElementById(
+      "temperatureLabel"
+    ).textContent = `Previsão de tempo de acordo com a região: ${data.current.temperature_2m}° C`;
+  } catch (error) {
+    alert(error.message);
+  }
+}
+
