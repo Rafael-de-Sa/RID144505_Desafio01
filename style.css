@@ -201,3 +201,13 @@ a:hover {
   margin: 1rem 0 0 0;
 }
 
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 5.5rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-top: 15rem;
+  padding-right: 2rem;
+}
