@@ -145,16 +145,15 @@ a:hover {
   gap: 1.2rem;
 }
 
-.zipcode-table-container {
+.container {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.table-box {
+.internal-container {
   width: 53rem;
-  margin-top: 15rem;
 }
 
 .table-title {
