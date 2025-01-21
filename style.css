@@ -218,3 +218,48 @@ a:hover {
 #weather-result {
   margin-top: 13rem;
 }
+
+/*Tablet*/
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2.3rem;
+  }
+
+  .navbar-list > ul {
+    font-size: 1.3rem;
+  }
+
+  .page-title {
+    padding: 5.5rem 10.5rem;
+    align-items: center;
+  }
+
+  .page-title > img {
+    height: 10rem;
+  }
+
+  .search-box {
+    width: 45rem;
+  }
+
+  .search-grid {
+    padding: 6.4rem 5.2rem 3.6rem;
+  }
+
+  .internal-container {
+    width: 45rem;
+  }
+
+  .footer {
+    margin-top: 13rem;
+    font-size: 1rem;
+  }
+
+  #zipcode-table {
+    margin-top: 16rem;
+  }
+}
