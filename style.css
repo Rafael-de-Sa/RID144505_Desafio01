@@ -211,3 +211,11 @@ a:hover {
   margin-top: 15rem;
   padding-right: 2rem;
 }
+
+#zipcode-table {
+  margin-top: 25.5rem;
+}
+
+#weather-result {
+  margin-top: 13rem;
+}
