@@ -281,5 +281,47 @@ a:hover {
   }
 }
 
+/*Mobile*/
+@media only screen and (max-width: 767px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.7rem;
+  }
+
+  input {
+    padding: 1rem 0 1rem 0.7rem;
+    width: 23rem;
+  }
+
+  .navbar {
+    padding: 1rem 2rem 1rem;
+  }
+
+  .navbar-list > ul {
+    font-size: 1rem;
+  }
+
+  .page-title {
+    padding: 4.2rem 8rem;
+    align-items: center;
+  }
+
+  .page-title > img {
+    height: 8rem;
+  }
+
+  .search-box {
+    width: 32rem;
+  }
+
+  .search-grid {
+    padding: 4.3rem 4.1rem 2.9rem;
+  }
+
+  .latitude-longitude {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
