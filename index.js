@@ -3,8 +3,20 @@ let rowAdded = false;
 async function getAdressByZipCode() {
   const zipCode = document.getElementById("zipCode").value;
   try {
+    console.log(zipCode.length);
+    if (zipCode.length !== 8) {
+      alert("CEP não encontrado. Por favor, verifique e tente novamente.");
+      return;
+    }
     const response = await fetch(`https://viacep.com.br/ws/${zipCode}/json/`);
     const data = await response.json();
+    console.log(data);
+
+    if (data.erro) {
+      alert("CEP não encontrado. Por favor, verifique e tente novamente.");
+      return;
+    }
+
     if (!rowAdded) {
       document.getElementById("table-body").innerHTML += `
     <tr class="zipcode-table-row">        
@@ -20,7 +32,7 @@ async function getAdressByZipCode() {
       document.getElementById("uf").textContent = data.uf;
     }
   } catch (error) {
-    alert(error.message);
+    alert(`Erro ao buscar o CEP: ${error.message}`);
   }
 }
 
