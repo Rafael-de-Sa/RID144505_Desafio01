@@ -69,3 +69,18 @@ function buttonClick() {
     alert("Preencha os campos corretamente!");
   }
 }
+
+function showModal(message) {
+  message = "teste";
+  const modal = document.getElementById("modal");
+  modal.classList.add("active");
+  const modalMessage = document.getElementById("modal-message");
+  modalMessage.textContent = `${message}`;
+
+  const closeModalButton = document.getElementById("close-modal-button");
+  closeModalButton.addEventListener("click", closeModal());
+}
+
+function closeModal() {
+  document.classList.remove("active");
+}
