@@ -44,6 +44,7 @@ async function getAdressByZipCode() {
 async function getWeather() {
   const longitude = document.getElementById("longitude").value;
   const latitude = document.getElementById("latitude").value;
+  latitudeAndLongitudeValidation(latitude, longitude);
   try {
     const response = await fetch(
       `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m`
@@ -90,4 +91,51 @@ function showModal(message) {
 function closeModal() {
   const modal = document.getElementById("modal");
   modal.classList.remove("active");
+}
+
+function latitudeAndLongitudeValidation(latitude, longitude) {
+  let latitudeValidation;
+  let longitudeValidation;
+  if (latitude < -90 || latitude > 90) {
+    latitudeValidation = false;
+  } else {
+    latitudeValidation = true;
+  }
+
+  if (longitude < -180 || longitude > 180) {
+    longitudeValidation = false;
+  } else {
+    longitudeValidation = true;
+  }
+
+  if (latitudeValidation && longitudeValidation) {
+    return;
+  }
+  if (!latitudeValidation && !longitudeValidation) {
+    const message = "Digite uma latitude e longitude válidas!";
+    showModal(message);
+    latitudeClear();
+    longitudeClear();
+    exit;
+  }
+  if (!latitudeValidation) {
+    const message = "Digite uma latitude válida!";
+    showModal(message);
+    latitudeClear();
+    exit;
+  }
+  if (!longitudeValidation) {
+    const message = "Digite uma longitude válida!";
+    showModal(message);
+    longitudeClear();
+    exit;
+  }
+}
+
+function latitudeClear() {
+  document.getElementById("latitude").value = "";
+}
+
+function longitudeClear() {
+  document.getElementById("longitude").value = "";
 }
