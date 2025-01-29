@@ -5,7 +5,9 @@ async function getAdressByZipCode() {
   try {
     console.log(zipCode.length);
     if (zipCode.length !== 8) {
-      alert("CEP não encontrado. Por favor, verifique e tente novamente.");
+      let message =
+        "CEP não encontrado. Por favor, verifique e tente novamente.";
+      showModal(message);
       return;
     }
     const response = await fetch(`https://viacep.com.br/ws/${zipCode}/json/`);
@@ -13,7 +15,9 @@ async function getAdressByZipCode() {
     console.log(data);
 
     if (data.erro) {
-      alert("CEP não encontrado. Por favor, verifique e tente novamente.");
+      let message =
+        "CEP não encontrado. Por favor, verifique e tente novamente.";
+      showModal(message);
       return;
     }
 
@@ -32,7 +36,8 @@ async function getAdressByZipCode() {
       document.getElementById("uf").textContent = data.uf;
     }
   } catch (error) {
-    alert(`Erro ao buscar o CEP: ${error.message}`);
+    let message = `Erro ao buscar o CEP: ${error.message}`;
+    showModal(message);
   }
 }
 
@@ -49,7 +54,8 @@ async function getWeather() {
       "temperatureLabel"
     ).textContent = `Previsão de tempo de acordo com a região: ${data.current.temperature_2m}° C`;
   } catch (error) {
-    alert(error.message);
+    let message = `Erro ao pesquisar clima: ${error.message}`;
+    showModal(message);
   }
 }
 
@@ -66,21 +72,22 @@ function buttonClick() {
   }
 
   if (!zipCode && !latitude && !longitude) {
-    alert("Preencha os campos corretamente!");
+    let message = "Preencha os campos corretamente!";
+    showModal(message);
   }
 }
 
 function showModal(message) {
-  message = "teste";
   const modal = document.getElementById("modal");
   modal.classList.add("active");
   const modalMessage = document.getElementById("modal-message");
   modalMessage.textContent = `${message}`;
 
   const closeModalButton = document.getElementById("close-modal-button");
-  closeModalButton.addEventListener("click", closeModal());
+  closeModalButton.addEventListener("click", closeModal);
 }
 
 function closeModal() {
-  document.classList.remove("active");
+  const modal = document.getElementById("modal");
+  modal.classList.remove("active");
 }
