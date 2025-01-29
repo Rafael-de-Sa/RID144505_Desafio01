@@ -15,6 +15,16 @@ main {
   width: 100%;
 }
 
+a,
+a:visited {
+  text-decoration: none;
+  color: #fff;
+}
+
+a:hover {
+  color: #e0dbdb;
+}
+
 h1 {
   font-size: 3rem;
   margin: 0;
@@ -89,16 +99,6 @@ label {
 
 .navbar-list > ul > li {
   cursor: pointer;
-}
-
-a,
-a:visited {
-  text-decoration: none;
-  color: #fff;
-}
-
-a:hover {
-  color: #e0dbdb;
 }
 
 .navbar-list > ul > li:first-child {
