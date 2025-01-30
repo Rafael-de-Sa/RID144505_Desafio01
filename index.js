@@ -71,8 +71,8 @@ async function getWeatherByZipCode(city) {
 }
 
 async function getWeather() {
-  const longitude = document.getElementById("longitude").value;
-  const latitude = document.getElementById("latitude").value;
+  const latitude = getLatitude();
+  const longitude = getLongitude();
   latitudeAndLongitudeValidation(latitude, longitude);
   try {
     const response = await fetch(
@@ -94,11 +94,11 @@ function buttonClick() {
   const latitude = document.getElementById("latitude").value;
   const longitude = document.getElementById("longitude").value;
 
-  if (zipCode) {
-    getAdressByZipCode();
-  }
   if (latitude && longitude) {
     getWeather();
+  }
+  if (zipCode) {
+    getAdressByZipCode();
   }
 
   if (!zipCode && !latitude && !longitude) {
@@ -167,4 +167,16 @@ function latitudeClear() {
 
 function longitudeClear() {
   document.getElementById("longitude").value = "";
+}
+
+function clearZipCode() {
+  document.getElementById("zipCode").value = "";
+}
+
+function getLatitude() {
+  return document.getElementById("latitude").value;
+}
+
+function getLongitude() {
+  return document.getElementById("longitude").value;
 }
