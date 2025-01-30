@@ -53,6 +53,23 @@ async function getAdressByZipCode() {
   }
 }
 
+async function getWeatherByZipCode(city) {
+  try {
+    const response = await fetch(
+      `https://geocoding-api.open-meteo.com/v1/search?name=${city}&count=1&language=pt&format=json`
+    );
+    const data = await response.json();
+    const latitude = data.results[0].latitude;
+    const longitude = data.results[0].longitude;
+    document.getElementById("latitude").value = latitude;
+    document.getElementById("longitude").value = longitude;
+    getWeather();
+  } catch (error) {
+    let message = `Erro ao buscar o clima: ${error.message}`;
+    showModal(message);
+  }
+}
+
 async function getWeather() {
   const longitude = document.getElementById("longitude").value;
   const latitude = document.getElementById("latitude").value;
