@@ -3,21 +3,27 @@ let rowAdded = false;
 async function getAdressByZipCode() {
   const zipCode = document.getElementById("zipCode").value;
   try {
-    console.log(zipCode.length);
-    if (zipCode.length !== 8) {
-      let message =
-        "CEP não encontrado. Por favor, verifique e tente novamente.";
+    if (isNaN(zipCode)) {
+      let message = "Digite apenas números!";
       showModal(message);
+      clearZipCode();
       return;
     }
+    if (zipCode.length !== 8) {
+      let message = "Digite um CEP válido!";
+      showModal(message);
+      clearZipCode();
+      return;
+    }
+
     const response = await fetch(`https://viacep.com.br/ws/${zipCode}/json/`);
     const data = await response.json();
-    console.log(data);
 
     if (data.erro) {
       let message =
         "CEP não encontrado. Por favor, verifique e tente novamente.";
       showModal(message);
+      clearZipCode();
       return;
     }
 
@@ -34,6 +40,12 @@ async function getAdressByZipCode() {
       document.getElementById("logradouro").textContent = data.logradouro;
       document.getElementById("bairro").textContent = data.bairro;
       document.getElementById("uf").textContent = data.uf;
+    }
+
+    const latitude = getLatitude();
+    const longitude = getLongitude();
+    if (!latitude || !longitude) {
+      getWeatherByZipCode(data.localidade);
     }
   } catch (error) {
     let message = `Erro ao buscar o CEP: ${error.message}`;
